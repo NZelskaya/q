@@ -1,0 +1,2 @@
+﻿Call EndLog
+Call ExitTest

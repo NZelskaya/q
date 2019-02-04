@@ -1,0 +1,2 @@
+﻿Call SetUpCSVFiles
+Call StartLog
