@@ -5,7 +5,7 @@ searchUrl = GetTestParameterValue("expected_search_url")
 
 Set googlePage = Browser("name:=Google").Page("title:=Google")
 		Set searchField = googlePage.WebEdit("name:=q")
-		Set searchButton = googlePage.WebButton("xpath:=//FORM[@id='tsf']/DIV[2]/DIV[1]/DIV[3]/CENTER[1]/INPUT[1]")
+		Set searchButton = googlePage.WebButton("css:=.FPdoLc input[name='btnK']")
 		
 If searchField.Exist(timeOut) Then
 	searchField.Click
