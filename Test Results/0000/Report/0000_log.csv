@@ -1,9 +1,7 @@
 
 ------------- URUCHOMIENIE TESTU | >>>> uft_demo_final
-1|uruchomienie|PASS|2/6/2019 1:43:59 PM|2/6/2019 1:44:16 PM|wczytanie strony glownej
-2|wyszukanie|PASS|2/6/2019 1:43:59 PM|2/6/2019 1:44:17 PM|Search Field exists on the page
-2|wyszukanie|PASS|2/6/2019 1:43:59 PM|2/6/2019 1:44:17 PM|Search Button exists on the page
-2|wyszukanie|PASS|2/6/2019 1:43:59 PM|2/6/2019 1:44:19 PM|Searched link exist on the page
-2|wyszukanie|PASS|2/6/2019 1:43:59 PM|2/6/2019 1:44:21 PM|Searched page opened
-
--------------- ZAKONCZENIE TESTU | >>>> uft_demo_final
+1|uruchomienie|PASS|2/6/2019 9:08:15 PM|2/6/2019 9:08:33 PM|wczytanie strony glownej
+2|wyszukanie|PASS|2/6/2019 9:08:15 PM|2/6/2019 9:08:34 PM|Search Field exists on the page
+2|wyszukanie|PASS|2/6/2019 9:08:15 PM|2/6/2019 9:08:34 PM|Search Button exists on the page
+2|wyszukanie|PASS|2/6/2019 9:08:15 PM|2/6/2019 9:08:35 PM|Searched link exist on the page
+2|wyszukanie|FAIL|2/6/2019 9:08:15 PM|2/6/2019 9:08:43 PM|Searched page wasn't opened
