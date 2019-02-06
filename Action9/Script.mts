@@ -34,7 +34,7 @@ End If
 
 searchValue = request & " - Google search"
 Set googleSearchPage = Browser("name:=" & searchValue).Page("title:=" & searchValue)
-Set b2bLink = googleSearchPage.Link("xpath:=//a[@href='" & searchUrl & "/']")
+Set b2bLink = googleSearchPage.Link("css:=a[href*='" & searchUrl & "/']")
 
 If b2bLink.Exist(timeOut) Then
 	b2bLink.Click
