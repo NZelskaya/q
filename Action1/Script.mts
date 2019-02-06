@@ -8,7 +8,7 @@ Select Case typOperacji
 		RunAction "uruchomienie", oneIteration
 	'@TestFactoryMethod("Make search", "wyszukanie")
 	Case "wyszukanie"
-		'@TestFactoryParam([request: STRING, Timeout: INT])
+		'@TestFactoryParam([request: STRING, Timeout: INT, expected_search_url: STRING])
 		RunAction "wyszukanie", oneIteration
 End Select
 
