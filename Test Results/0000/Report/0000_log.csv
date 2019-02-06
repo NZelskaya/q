@@ -1,3 +1,9 @@
 
-------------- URUCHOMIENIE TESTU | >>>> demo_final
-1|uruchomienie|PASS|2/4/2019 9:55:47 PM|2/4/2019 9:56:04 PM|wczytanie strony glownej
+------------- URUCHOMIENIE TESTU | >>>> uft_demo_final
+1|uruchomienie|PASS|2/6/2019 1:32:04 PM|2/6/2019 1:32:21 PM|wczytanie strony glownej
+2|wyszukanie|PASS|2/6/2019 1:32:04 PM|2/6/2019 1:32:22 PM|Search Field exists on the page
+2|wyszukanie|PASS|2/6/2019 1:32:04 PM|2/6/2019 1:32:23 PM|Search Button exists on the page
+2|wyszukanie|PASS|2/6/2019 1:32:04 PM|2/6/2019 1:32:24 PM|B2B link exist on the page
+2|wyszukanie|PASS|2/6/2019 1:32:04 PM|2/6/2019 1:32:25 PM|B2B page opened
+
+-------------- ZAKONCZENIE TESTU | >>>> uft_demo_final

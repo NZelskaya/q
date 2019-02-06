@@ -1,4 +1,5 @@
 #UFT ignore section
 *.lck
 /Res*
+Test Results
 #end UFT ignore section
