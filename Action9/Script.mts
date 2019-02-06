@@ -4,7 +4,7 @@ request = GetTestParameterValue("request")
 searchUrl = GetTestParameterValue("expected_search_url")
 
 Set googlePage = Browser("name:=Google").Page("title:=Google")
-		Set searchField = googlePage.WebEdit("title:=Search")
+		Set searchField = googlePage.WebEdit("title:=Szukaj")
 		Set searchButton = googlePage.WebButton("xpath:=//FORM[@id='tsf']/DIV[2]/DIV[1]/DIV[3]/CENTER[1]/INPUT[1]")
 		
 If searchField.Exist(timeOut) Then
