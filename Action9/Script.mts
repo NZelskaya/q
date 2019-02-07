@@ -68,7 +68,7 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
 		Set query = googlePage.WebEdit("name:=q")
-		url query.GetRoProperty("innertext")
+		url = query.GetRoProperty("value")
 		stringCompare = StrComp(url, request)
 	If stringCompare = 0 Then	
 	 	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
