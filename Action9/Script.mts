@@ -1,4 +1,4 @@
-﻿Dim timeOut, request, searchValue, url, stringCompare
+﻿Dim timeOut, request, searchValue, url, stringCompare, b2bLinkSelector
 timeOut = GetTestParameterValue("Timeout")
 request = GetTestParameterValue("request")
 searchUrl = GetTestParameterValue("expected_search_url")
@@ -33,8 +33,10 @@ else
 End If
 
 searchValue = request & " - Google search"
-Set googleSearchPage = Browser("name:=" & searchValue).Page("title:=" & searchValue)
-Set b2bLink = googleSearchPage.Link("css:=a[href*='" & searchUrl & "/']")
+Set googleSearchPage = Browser("name:= .*").Page("title:=.*")
+
+b2bLinkSelector = "xpath:=//a[contains(@href,'" & searchUrl & "')]"
+Set b2bLink = googleSearchPage.Link(b2bLinkSelector)
 
 If b2bLink.Exist(timeOut) Then
 	b2bLink.Click
@@ -42,9 +44,9 @@ If b2bLink.Exist(timeOut) Then
 	''Dodanie komunikatu do loga
 	Call Log_Result("PASS", "Searched link exist on the page")
 else
-	Reporter.ReportEvent micFail, "Searched link does not exist on the page", "Searched link does not exist on the page"
+	Reporter.ReportEvent micFail, "Searched link does not exist by selector " & b2bLinkSelector, "Searched link does not exist by selector " & b2bLinkSelector
 	''Dodanie komunikatu do loga
-	Call Log_Result("FAIL", "Searched link does not exist on the page")
+	Call Log_Result("FAIL", "Searched link does not exist by selector " & b2bLinkSelector)
 	ExitTest
 End If
 
