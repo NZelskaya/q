@@ -67,7 +67,7 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set b2bLink = googlePage.Link("xpath:=//a[contains(@href,'" & searchUrl & "')]")
+		Set b2bLink = googlePage.Link("xpath:=//a[@id='logo']")
 	If b2bLink.Exist(timeOut) Then	
 	 	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
 		''Dodanie komunikatu do loga
