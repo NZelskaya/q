@@ -1,4 +1,4 @@
-﻿Dim timeOut, request, searchValue, url, stringCompare, b2bLinkSelector
+﻿Dim timeOut, request, searchValue, showedQuery, stringCompare,
 timeOut = GetTestParameterValue("Timeout")
 request = GetTestParameterValue("request")
 searchUrl = GetTestParameterValue("expected_search_url")
@@ -50,9 +50,6 @@ End If
 '	ExitTest
 'End If
 
-url = Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("url")
-Print "Opened site : " & url
-Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'stringCompare = StrComp(url, searchUrl)
 
 'If stringCompare = 0 Then	
@@ -66,20 +63,24 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 '	ExitTest
 'End If
 
-Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set query = googlePage.WebEdit("name:=q")
-		url = query.GetRoProperty("value")
-		stringCompare = StrComp(url, request)
+
+Set query = Browser("micclass:=Browser").Page("micclass:=Page").WebEdit("name:=q")
+
+showedQuery = query.GetRoProperty("value")
+stringCompare = StrComp(showedQuery, request)
+
+Print showedQuery
+
 	If stringCompare = 0 Then	
-	 	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
+	 	Reporter.ReportEvent micPass, "Searched query showed properly", "Searched query showed properly"
 		''Dodanie komunikatu do loga
-		Call Log_Result("PASS", "Searched link exist on the page")
+		Call Log_Result("PASS", "Searched query showed properly")
 		'Zaraportowanie kroku testowego
 		Call TestReport ("PASS")
 	Else
-	 	Reporter.ReportEvent micFail, "Searched link doesn't exist on the page", "Searched link doesn't exist on the page"
+	 	Reporter.ReportEvent micFail, "Searched query showed wrong: " & showedQuery, "Searched query showed wrong: " & showedQuery
 		''Dodanie komunikatu do loga
-		Call Log_Result("FAIL", "Searched link doesn't exist on the page")
+		Call Log_Result("FAIL", "Searched query showed wrong: " & showedQuery)
 		'Zaraportowanie kroku testowego
 		Call TestReport ("FAIL")
 	End if
