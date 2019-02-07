@@ -67,9 +67,9 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set startPage = googlePage.Link("xpath:=//a[@href='/url?q=https://b2bnetwork.pl/&sa=U&ved=0ahUKEwjZ0pCttangAhUMDSwKHXnnBqoQFggVMAA&usg=AOvVaw00niWGnTUMGXDpUupoUhMs']")
+		Set startPage = googlePage.Link("xpath:=//a[contains(@href,'" & searchUrl & "')]")
 	If startPage.Exist(timeOut) Then
-	startPage.Click
+	
 	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
 		''Dodanie komunikatu do loga
 		Call Log_Result("PASS", "wczytanie strony glownej")
