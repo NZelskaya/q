@@ -67,7 +67,7 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set startPage = googlePage.Link("xpath:=//a[@id='logo']")
+		Set startPage = googlePage.Link("xpath:=//a[@href='/url?q=https://b2bnetwork.pl/&sa=U&ved=0ahUKEwjZ0pCttangAhUMDSwKHXnnBqoQFggVMAA&usg=AOvVaw00niWGnTUMGXDpUupoUhMs']")
 	If startPage.Exist(timeOut) Then
 	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
 		''Dodanie komunikatu do loga
