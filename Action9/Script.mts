@@ -32,55 +32,23 @@ else
 	ExitTest
 End If
 
-'searchValue = request & " - Google search"
-'Set googleSearchPage = Browser("micclass:=Browser").Page("micclass:=Page")
-
-'b2bLinkSelector = "xpath:=//a[contains(@href,'" & searchUrl & "')]"
-'Set b2bLink = googleSearchPage.Link(b2bLinkSelector)
-
-'If b2bLink.Exist(timeOut) Then
-'	b2bLink.Click
-'	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
-	''Dodanie komunikatu do loga
-'	Call Log_Result("PASS", "Searched link exist on the page")
-'else
-'	Reporter.ReportEvent micFail, "Searched link does not exist by selector " & b2bLinkSelector, "Searched link does not exist by selector " & b2bLinkSelector
-	''Dodanie komunikatu do loga
-'	Call Log_Result("FAIL", "Searched link does not exist by selector " & b2bLinkSelector)
-'	ExitTest
-'End If
-
-'stringCompare = StrComp(url, searchUrl)
-
-'If stringCompare = 0 Then	
-'	Reporter.ReportEvent micPass, "Searched page opened", "Searched page opened"
-	''Dodanie komunikatu do loga
-'	Call Log_Result("PASS", "Searched page opened")
-'else
-'	Reporter.ReportEvent micFail, "Searched page wasn't opened", "Searched page wasn't opened"
-	''Dodanie komunikatu do loga
-'	Call Log_Result("FAIL", "Searched page wasn't opened")
-'	ExitTest
-'End If
-
-
 Set query = Browser("micclass:=Browser").Page("micclass:=Page").WebEdit("name:=q")
 
 showedQuery = query.GetRoProperty("value")
 stringCompare = StrComp(showedQuery, request)
 
-Print showedQuery
+Print "Showed request: " & showedQuery
 
 	If stringCompare = 0 Then	
-	 	Reporter.ReportEvent micPass, "Searched query showed properly", "Searched query showed properly"
+	 	Reporter.ReportEvent micPass, "Searched query is correct", "Searched query is correct"
 		''Dodanie komunikatu do loga
-		Call Log_Result("PASS", "Searched query showed properly")
+		Call Log_Result("PASS", "Searched query is correct")
 		'Zaraportowanie kroku testowego
 		Call TestReport ("PASS")
 	Else
-	 	Reporter.ReportEvent micFail, "Searched query showed wrong: " & showedQuery, "Searched query showed wrong: " & showedQuery
+	 	Reporter.ReportEvent micFail, "Searched query is wrong: " & showedQuery, "Searched query is wrong: " & showedQuery
 		''Dodanie komunikatu do loga
-		Call Log_Result("FAIL", "Searched query showed wrong: " & showedQuery)
+		Call Log_Result("FAIL", "Searched query is wrong: " & showedQuery)
 		'Zaraportowanie kroku testowego
 		Call TestReport ("FAIL")
 	End if
