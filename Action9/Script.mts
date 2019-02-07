@@ -33,7 +33,7 @@ else
 End If
 
 searchValue = request & " - Google search"
-Set googleSearchPage = Browser("name:= .*").Page("title:=.*")
+Set googleSearchPage = Browser("micclass:=Browser").Page("micclass:=Page")
 
 b2bLinkSelector = "xpath:=//a[contains(@href,'" & searchUrl & "')]"
 Set b2bLink = googleSearchPage.Link(b2bLinkSelector)
