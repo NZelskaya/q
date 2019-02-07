@@ -32,36 +32,36 @@ else
 	ExitTest
 End If
 
-searchValue = request & " - Google search"
-Set googleSearchPage = Browser("micclass:=Browser").Page("micclass:=Page")
+'searchValue = request & " - Google search"
+'Set googleSearchPage = Browser("micclass:=Browser").Page("micclass:=Page")
 
-b2bLinkSelector = "xpath:=//a[contains(@href,'" & searchUrl & "')]"
-Set b2bLink = googleSearchPage.Link(b2bLinkSelector)
+'b2bLinkSelector = "xpath:=//a[contains(@href,'" & searchUrl & "')]"
+'Set b2bLink = googleSearchPage.Link(b2bLinkSelector)
 
-If b2bLink.Exist(timeOut) Then
-	b2bLink.Click
-	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
+'If b2bLink.Exist(timeOut) Then
+'	b2bLink.Click
+'	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
 	''Dodanie komunikatu do loga
-	Call Log_Result("PASS", "Searched link exist on the page")
-else
-	Reporter.ReportEvent micFail, "Searched link does not exist by selector " & b2bLinkSelector, "Searched link does not exist by selector " & b2bLinkSelector
+'	Call Log_Result("PASS", "Searched link exist on the page")
+'else
+'	Reporter.ReportEvent micFail, "Searched link does not exist by selector " & b2bLinkSelector, "Searched link does not exist by selector " & b2bLinkSelector
 	''Dodanie komunikatu do loga
-	Call Log_Result("FAIL", "Searched link does not exist by selector " & b2bLinkSelector)
-	ExitTest
-End If
+'	Call Log_Result("FAIL", "Searched link does not exist by selector " & b2bLinkSelector)
+'	ExitTest
+'End If
 
 url = Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("url")
 Print "Opened site : " & url
 
-stringCompare = StrComp(url, searchUrl)
+'stringCompare = StrComp(url, searchUrl)
 
-If stringCompare = 0 Then	
-	Reporter.ReportEvent micPass, "Searched page opened", "Searched page opened"
+'If stringCompare = 0 Then	
+'	Reporter.ReportEvent micPass, "Searched page opened", "Searched page opened"
 	''Dodanie komunikatu do loga
-	Call Log_Result("PASS", "Searched page opened")
-else
-	Reporter.ReportEvent micFail, "Searched page wasn't opened", "Searched page wasn't opened"
+'	Call Log_Result("PASS", "Searched page opened")
+'else
+'	Reporter.ReportEvent micFail, "Searched page wasn't opened", "Searched page wasn't opened"
 	''Dodanie komunikatu do loga
-	Call Log_Result("FAIL", "Searched page wasn't opened")
-	ExitTest
-End If
+'	Call Log_Result("FAIL", "Searched page wasn't opened")
+'	ExitTest
+'End If
