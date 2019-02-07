@@ -1,4 +1,4 @@
-﻿Dim timeOut, request, searchValue, showedQuery, stringCompare,
+﻿Dim timeOut, request, searchValue, showedQuery, stringCompare
 timeOut = GetTestParameterValue("Timeout")
 request = GetTestParameterValue("request")
 searchUrl = GetTestParameterValue("expected_search_url")
