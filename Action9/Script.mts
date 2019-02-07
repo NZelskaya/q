@@ -67,10 +67,10 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set b2bLink = googlePage.WebEdit("name:=q")
-		Print b2bLink.GetRoProperty("innertext")
-	If b2bLink.Exist(timeOut) Then	
-	b2bLink.Click
+		Set query = googlePage.WebEdit("name:=q")
+		url query.GetRoProperty("innertext")
+		stringCompare = StrComp(url, request)
+	If stringCompare = 0 Then	
 	 	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
 		''Dodanie komunikatu do loga
 		Call Log_Result("PASS", "Searched link exist on the page")
