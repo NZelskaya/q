@@ -67,18 +67,17 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set startPage = googlePage.Link("xpath:=//a[contains(@href,'" & searchUrl & "')]")
-	If startPage.Exist(timeOut) Then
-	
-	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
+		Set b2bLink = googlePage.Link("xpath:=//a[contains(@href,'" & searchUrl & "')]")
+	If b2bLink.Exist(timeOut) Then	
+	 	Reporter.ReportEvent micPass, "Searched link exist on the page", "Searched link exist on the page"
 		''Dodanie komunikatu do loga
-		Call Log_Result("PASS", "wczytanie strony glownej")
+		Call Log_Result("PASS", "Searched link exist on the page")
 		'Zaraportowanie kroku testowego
 		Call TestReport ("PASS")
 	Else
-	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
+	 	Reporter.ReportEvent micFail, "Searched link doesn't exist on the page", "Searched link doesn't exist on the page"
 		''Dodanie komunikatu do loga
-		Call Log_Result("PASS", "wczytanie strony glownej")
+		Call Log_Result("FAIL", "Searched link doesn't exist on the page")
 		'Zaraportowanie kroku testowego
-		Call TestReport ("PASS")
+		Call TestReport ("FAIL")
 	End if

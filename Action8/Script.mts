@@ -17,9 +17,9 @@ Set googlePage = Browser("name:=Google").Page("title:=Google")
 		'Zaraportowanie kroku testowego
 		Call TestReport ("PASS")
 	Else
-	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
+	 	Reporter.ReportEvent micFail, "wczytanie strony glownej", "wczytanie strony glownej"
 		''Dodanie komunikatu do loga
-		Call Log_Result("PASS", "wczytanie strony glownej")
+		Call Log_Result("FAIL", "wczytanie strony glownej")
 		'Zaraportowanie kroku testowego
-		Call TestReport ("PASS")
+		Call TestReport ("FAIL")
 	End if
