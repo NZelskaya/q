@@ -67,7 +67,7 @@ Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'End If
 
 Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
-		Set b2bLink = googlePage.WebElement("css:=#ires a cite")
+		Set b2bLink = googlePage.WebElement("css:=#ires cite")
 		Print b2bLink.GetRoProperty("innertext")
 	If b2bLink.Exist(timeOut) Then	
 	b2bLink.Click
