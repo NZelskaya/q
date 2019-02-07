@@ -1,7 +1,6 @@
-﻿Dim timeOut, request, searchValue, showedQuery, stringCompare
+﻿Dim timeOut, request, showedQuery, stringCompare
 timeOut = GetTestParameterValue("Timeout")
 request = GetTestParameterValue("request")
-searchUrl = GetTestParameterValue("expected_search_url")
 
 Set googlePage = Browser("name:=Google").Page("title:=Google")
 		Set searchField = googlePage.WebEdit("name:=q")
