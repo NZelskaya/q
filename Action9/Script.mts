@@ -52,7 +52,7 @@ End If
 
 url = Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("url")
 Print "Opened site : " & url
-
+Print Browser("micclass:=Browser").Page("micclass:=Page").GetRoProperty("name")
 'stringCompare = StrComp(url, searchUrl)
 
 'If stringCompare = 0 Then	
@@ -65,3 +65,19 @@ Print "Opened site : " & url
 '	Call Log_Result("FAIL", "Searched page wasn't opened")
 '	ExitTest
 'End If
+
+Set googlePage = Browser("micclass:=Browser").Page("micclass:=Page")
+		Set startPage = googlePage.Link("xpath:=//a[@id='logo']")
+	If startPage.Exist(timeOut) Then
+	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
+		''Dodanie komunikatu do loga
+		Call Log_Result("PASS", "wczytanie strony glownej")
+		'Zaraportowanie kroku testowego
+		Call TestReport ("PASS")
+	Else
+	 	Reporter.ReportEvent micPass, "wczytanie strony glownej", "wczytanie strony glownej"
+		''Dodanie komunikatu do loga
+		Call Log_Result("PASS", "wczytanie strony glownej")
+		'Zaraportowanie kroku testowego
+		Call TestReport ("PASS")
+	End if
